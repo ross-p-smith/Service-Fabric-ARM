@@ -490,16 +490,17 @@
                               }
                             }
                           ]
-                        }
-                      }
-                    },
-                    "SinksConfig": {
+                        },
+                        "sinks": "applicationInsights"
+                      },
+                      "SinksConfig": {
                         "Sink": [
-                            {
-                                "name": "applicationInsights",
-                                "ApplicationInsights": "[reference(resourceId('Microsoft.Insights/components/', concat(parameters('clusterName'),'ai1234')), '2014-04-01').InstrumentationKey]"
-                            }
+                          {
+                            "name": "applicationInsights",
+                            "ApplicationInsights": "[reference(resourceId('Microsoft.Insights/components/', concat(parameters('clusterName'),'ai1234')), '2014-04-01').InstrumentationKey]"
+                          }
                         ]
+                      }
                     },
                     "StorageAccount": "[variables('applicationDiagnosticsStorageAccountName')]"
                   },
